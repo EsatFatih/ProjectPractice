@@ -2,9 +2,10 @@ package day03;
 
 import java.util.Scanner;
 
-public class AnaMenu {
+public class Anamenu {
     Scanner scan = new Scanner(System.in);
     OgrenciIslemleri ogrenciIslemleri;
+    OgretmenIslemleri ogretmenIslemleri;
     void menu() {
         System.out.println("====================================\n" +
                 "\t ÖĞRENCİ VE ÖĞRETMEN YÖNETİM PANELİ\n" +
@@ -20,8 +21,16 @@ public class AnaMenu {
                 ogrenciIslemleri.ogrenciMenu();
             }
             case '2': {
+                ogretmenIslemleri=new OgretmenIslemleri();
+                ogretmenIslemleri.ogretmenMenu();
             }
             case 'Q': {
+                System.out.println("GÜLE GÜLE");
+                System.exit(0);
+            }
+            default:{
+                System.out.println("HATALI GİRİŞ YAPTINIZ...");
+                menu();
             }
         }
     }
